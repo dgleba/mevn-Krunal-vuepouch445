@@ -8,7 +8,7 @@ David Gleba 2019-02-22_Fri_07.09-AM
 
 ## Status
 
-- 2019-02-23_Sat_09.29-AM:: create post and posts are working.
+- 2019-02-23_Sat_09.29-AM:: `create post` and `posts` are working.
   I set edit path to a constant to avoid error for now.
 
 ## Project setup

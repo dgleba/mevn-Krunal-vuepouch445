@@ -29,6 +29,9 @@ import CreateComponent from "./components/CreateComponent.vue";
 import IndexComponent from "./components/IndexComponent.vue";
 import EditComponent from "./components/EditComponent.vue";
 
+let id = null;
+let _id = null;
+
 const routes = [
   {
     name: "home",

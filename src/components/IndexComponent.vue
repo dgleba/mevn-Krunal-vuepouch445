@@ -14,32 +14,26 @@
     <table class="table table-hover ">
       <thead>
         <tr>
+          <th>Actions</th>
           <th>Title</th>
           <th>Body</th>
           <th>_id</th>
-          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="post in mainlists" :key="post._id">
+          <div>
+            <td>
+              <router-link
+                :to="{ name: 'edit', params: { id: post._id } }"
+                class="btn btn-primary"
+                >Edit</router-link
+              >
+            </td>
+          </div>
           <td>{{ post.title }}</td>
           <td>{{ post.body }}</td>
           <td>{{ post._id }}</td>
-          <td>
-            <router-link
-              :to="{ name: 'edit', params: { id: post._id } }"
-              class="btn btn-primary"
-              >Edit</router-link
-            >
-          </td>
-          <td>
-            <button
-              class="btn btn-danger"
-              @click.prevent="deletePost(post._id);"
-            >
-              Delete
-            </button>
-          </td>
         </tr>
       </tbody>
     </table>

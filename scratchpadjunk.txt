@@ -1,5 +1,30 @@
 
 
+
+<td>
+<button class="btn btn-danger"
+    @click.prevent="deletePost(post._id);"> Delete   </button>
+</td >
+
+
+<br />
+
+.fade - enter - active,
+.fade - leave - active {
+  transition: opacity 0.5s;
+}
+.fade - enter,
+.fade - leave - active {
+  opacity: 0;
+}
+
+</div>
+
+navbar-collapse bg-dark navbar-dark
+
+class="container"
+
+
     < !--
       < transition name = "fade" >
       </transition >
