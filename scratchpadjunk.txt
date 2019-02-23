@@ -1,0 +1,21 @@
+
+
+    < !--
+      < transition name = "fade" >
+      </transition >
+  -->
+
+  < !-- < h1 > Posts</h1 > -->
+
+  post: {
+  title: "",
+    body: "",
+      rtype: "",
+        _id: "",
+          id: ""
+},
+
+
+[vue - router] missing param for named route "edit": Expected "id" to be defined
+Download the Vue Devtools extension for a better development experience:
+  https://github.com/vuejs/vue-devtools   
