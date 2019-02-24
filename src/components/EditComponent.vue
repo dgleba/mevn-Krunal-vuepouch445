@@ -63,22 +63,27 @@ export default {
     updatePost: function() {
       console.log(this.mainlists);
       this.$pouch
-        .post("mainlists", {
-          title: this.mainlists.title,
-          body: this.mainlists.body,
-          rtype: "mlist",
-          _id: this.$route.params.id,
-          _rev: this.mainlists._rev
-        })
+        .post(
+          "mainlists",
+          this.mainlists
+          // or update each field specifically
+          // , {
+          // title: this.mainlists.title,
+          // body: this.mainlists.body,
+          // rtype: "mlist",
+          // _id: this.$route.params.id,
+          // _rev: this.mainlists._rev
+          // }
+        )
         .then(() => {
           this.$router.push({ name: "posts" });
         });
     },
     deletePost_api(id) {
-      let uri = `http://localhost:4000/posts/delete/${id}`;
-      this.axios.delete(uri).then(response => {
-        this.posts.splice(this.posts.indexOf(id), 1);
-      });
+      // let uri = `http://localhost:4000/posts/delete/${id}`;
+      // this.axios.delete(uri).then(response => {
+      //   this.posts.splice(this.posts.indexOf(id), 1);
+      // });
     },
     deletePost(id) {
       console.log("to delete.. ", this.mainlists);
