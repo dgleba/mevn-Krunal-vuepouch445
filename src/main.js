@@ -12,7 +12,6 @@ Vue.use(VueAxios, axios);
 
 Vue.config.productionTip = false;
 
-import dayjs from "dayjs";
 import PouchDB from "pouchdb-browser";
 import lf from "pouchdb-find";
 import plf from "pouchdb-live-find";
@@ -50,10 +49,7 @@ const routes = [
   },
   {
     name: "edit",
-    //path: "/edit/:_id",
-
-    // temporarily avoid error: [vue - router] missing param for named route "edit": Expected "id" to be defined
-    path: "/edit/__thistobecompleted_undefined_record",
+    path: "/edit/:id",
     component: EditComponent
   }
 ];
@@ -61,12 +57,3 @@ const routes = [
 const router = new VueRouter({ mode: "history", routes: routes });
 
 new Vue(Vue.util.extend({ router }, App)).$mount("#app");
-
-// ??
-//
-/* eslint-disable no-new */
-// new Vue({
-//   el: "#app",
-//   template: "<App/>",
-//   components: { App }
-// });

@@ -45,19 +45,11 @@ export default {
   data() {
     return {
       posts: {},
-      post: {
-        id: "",
-        _id: ""
-      },
-      mainlists: {
-        title: "",
-        body: "",
-        rtype: "",
-        _id: ""
-      },
+      post: {},
+      mainlists: {},
       resultsPerPage: 25,
       currentPage: 1,
-      qsearch: "190221_2046"
+      qsearch: "190223_2327"
     };
   },
   created() {

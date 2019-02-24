@@ -40,10 +40,7 @@
 export default {
   data() {
     return {
-      post: {
-        id: "",
-        _id: ""
-      },
+      post: {},
       mainlists: {}
     };
   },

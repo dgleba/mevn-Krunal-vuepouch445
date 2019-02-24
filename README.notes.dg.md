@@ -1,6 +1,6 @@
 # Notes
 
-## undefined issue
+## undefined ... issue
 
 error:
 [vue - router] missing param for named route "edit": Expected "id" to be defined
@@ -18,3 +18,5 @@ name: "edit",
 path: "/edit/:id",
 component: EditComponent
 ```
+
+## .

@@ -37,23 +37,15 @@ export default {
   data() {
     return {
       posts: {},
-      post: {
-        id: "",
-        _id: ""
-      },
+      post: {},
       resultsPerPage: 25,
       currentPage: 1,
       qsearch: "190221_2046",
-      mainlists: {
-        title: "",
-        body: "",
-        rtype: "",
-        _id: ""
-      }
+      mainlists: {}
     };
   },
   methods: {
-    addPostapi() {
+    addPost_api() {
       //let uri = "http://192.168.88.58:4000/posts/add";
       // let uri = "http://localhost:4000/posts/add";
       // this.axios.post(uri, this.post).then(() => {
@@ -64,9 +56,7 @@ export default {
 
     addPost: function() {
       var viuid = dghelper.iuid();
-      // var viuid = dayjs()
-      //   .format("YYMMDD_HHmm.ss.SSSZZ-")
-      //   .concat(parseInt(Math.random() * 10000));
+
       console.log("viuid= ", viuid);
       console.log(this.post);
       this.$pouch
