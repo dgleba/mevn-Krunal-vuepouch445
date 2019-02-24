@@ -1,6 +1,15 @@
 
 
 
+
+<div class="row">
+  <td class="float-right">
+
+  </td>
+</div>
+
+
+
 <td>
 <button class="btn btn-danger"
     @click.prevent="deletePost(post._id);"> Delete   </button>

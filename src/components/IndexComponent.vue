@@ -70,14 +70,7 @@ export default {
     // });
   },
 
-  methods: {
-    deletePost(id) {
-      let uri = `http://localhost:4000/posts/delete/${id}`;
-      this.axios.delete(uri).then(response => {
-        this.posts.splice(this.posts.indexOf(id), 1);
-      });
-    }
-  },
+  methods: {},
 
   // Use the pouch property to configure the component to (reactively) read data from pouchdb.
   pouch: {
