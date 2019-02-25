@@ -2,7 +2,7 @@
   <div class="maindb">
     <div class="row">
       <div class="col-md-3">
-        <router-link :to="{ name: 'create' }" class="btn btn-primary"
+        <router-link :to="{ name: 'create' }" class="btn btn-success"
           >Create
         </router-link>
       </div>

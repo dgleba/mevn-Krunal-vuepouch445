@@ -19,4 +19,18 @@ path: "/edit/:id",
 component: EditComponent
 ```
 
-## .
+## Colors
+
+https://vuetifyjs.com/en/framework/colors
+
+#cceeff light blue
+
+CFD8DC blue-grey blue-grey lighten-4
+
+B2DFDB teal
+
+B3E5FC good light blue ish
+
+B1E1E4 tealish
+
+https://htmlcolorcodes.com/

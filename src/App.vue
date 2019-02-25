@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <nav
       class="navbar navbar-expand-sm navbar-light"
-      style="background-color: #cceeff ;"
+      style="background-color: #C3EDEC ;"
     >
       <a class="navbar-brand" href="#">App</a>
       <button
