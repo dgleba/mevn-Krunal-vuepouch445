@@ -1,22 +1,22 @@
 <template>
   <div>
-    <h5>Create A Post</h5>
-    <form @submit.prevent="addPost">
+    <h5>Create</h5>
+    <form @submit.prevent="add_mrow">
       <div class="row">
         <div class="col-md-11">
           <div class="form-group">
-            <label>Post Title:</label>
-            <input type="text" class="form-control" v-model="post.title" />
+            <label>Title:</label>
+            <input type="text" class="form-control" v-model="mrow.title" />
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-11">
           <div class="form-group">
-            <label>Post Body:</label>
+            <label>Body:</label>
             <textarea
               class="form-control"
-              v-model="post.body"
+              v-model="mrow.body"
               rows="5"
             ></textarea>
           </div>
@@ -37,11 +37,11 @@ export default {
   data() {
     return {
       posts: {},
-      post: {},
+      mrow: {},
       resultsPerPage: 25,
       currentPage: 1,
       qsearch: "190221_2046",
-      mainlists: {}
+      mainelement: {}
     };
   },
   methods: {
@@ -54,15 +54,15 @@ export default {
       console.log(this.post);
     },
 
-    addPost: function() {
+    add_mrow: function() {
       var viuid = dghelper.iuid();
 
       console.log("viuid= ", viuid);
-      console.log(this.post);
+      console.log(this.mrow);
       this.$pouch
-        .post("mainlists", {
-          title: this.post.title,
-          body: this.post.body,
+        .post("maindb", {
+          title: this.mrow.title,
+          body: this.mrow.body,
           rtype: "mlist",
           _id: viuid
         })
@@ -75,7 +75,7 @@ export default {
   // Use the pouch property to configure the component to (reactively) read data from pouchdb.
   pouch: {
     // simple selector.  I put i here to prevent post undefined error?
-    mainlists: function() {
+    maindb: function() {
       return {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
         selector: {},

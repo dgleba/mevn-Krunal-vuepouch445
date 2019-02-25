@@ -23,7 +23,9 @@
   },
   "offline-not-used-Dependencies": {
     "pouch-vue": "0.1.35",
-    "xx": "^2.5.17"
+    "vue-pouch": "0.0.23",
+    "xx": "0",
+    "xx": "0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",

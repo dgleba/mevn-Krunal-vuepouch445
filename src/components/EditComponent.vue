@@ -1,22 +1,22 @@
 <template>
-  <div class="mainlists">
-    <h4>Edit Post</h4>
-    <form @submit.prevent="updatePost">
+  <div class="maindb">
+    <h4>Edit</h4>
+    <form @submit.prevent="update_mrow">
       <div class="row">
         <div class="col-md-11">
           <div class="form-group">
-            <label>Post Title: </label>
-            <input type="text" class="form-control" v-model="mainlists.title" />
+            <label> Title: </label>
+            <input type="text" class="form-control" v-model="maindb.title" />
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-11">
           <div class="form-group">
-            <label>Post Body: </label>
+            <label>Body: </label>
             <textarea
               class="form-control"
-              v-model="mainlists.body"
+              v-model="maindb.body"
               rows="4"
             ></textarea>
           </div>
@@ -27,7 +27,7 @@
         <button class="btn btn-primary">Update</button>
         <button
           class="btn btn-danger float-right"
-          @click.prevent="deletePost(post._id);"
+          @click.prevent="delete_mrow(mrow._id);"
         >
           Delete
         </button>
@@ -40,8 +40,8 @@
 export default {
   data() {
     return {
-      post: {},
-      mainlists: {}
+      mrow: {},
+      maindb: {}
     };
   },
 
@@ -60,12 +60,12 @@ export default {
       //   });
     },
 
-    updatePost: function() {
-      console.log(this.mainlists);
+    update_mrow: function() {
+      console.log(this.maindb);
       this.$pouch
-        .post(
-          "mainlists",
-          this.mainlists
+        .put(
+          "maindb",
+          this.maindb
           // or update each field specifically
           // , {
           // title: this.mainlists.title,
@@ -85,12 +85,12 @@ export default {
       //   this.posts.splice(this.posts.indexOf(id), 1);
       // });
     },
-    deletePost(id) {
-      console.log("to delete.. ", this.mainlists);
+    delete_mrow(id) {
+      console.log("to delete.. ", this.maindb);
       this.$pouch
-        .remove("mainlists", {
+        .remove("maindb", {
           _id: this.$route.params.id,
-          _rev: this.mainlists._rev
+          _rev: this.mrow._rev
         })
         .then(() => {
           this.$router.push({ name: "posts" });
@@ -101,13 +101,13 @@ export default {
   // Use the pouch property to configure the component to (reactively) read data from pouchdb.
   pouch: {
     // You can also specify the database dynamically (local or remote), as well as limits, skip and sort order:
-    mainlists: function() {
+    maindb: function() {
       return {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
         selector: { _id: this.$route.params.id },
         first: true
       };
-      console.log(post);
+      console.log(this.maindb);
     }
   }
 };

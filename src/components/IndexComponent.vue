@@ -1,10 +1,10 @@
 <template>
-  <div class="mainlists">
+  <div class="maindb">
     <div class="row">
       <div class="col-md-3">
         <router-link :to="{ name: 'create' }" class="btn btn-primary"
-          >Create Post</router-link
-        >
+          >Create
+        </router-link>
       </div>
       <div class="col-md-9">
         Search mainlists -- _id more than <input v-model="qsearch" />
@@ -21,16 +21,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="post in mainlists" :key="post._id">
+        <tr v-for="mrow in maindb" :key="mrow._id">
           <router-link
-            :to="{ name: 'edit', params: { id: post._id } }"
+            :to="{ name: 'edit', params: { id: mrow._id } }"
             class="btn btn-primary"
             >Edit</router-link
           >
 
-          <td>{{ post.title }}</td>
-          <td>{{ post.body }}</td>
-          <td>{{ post._id }}</td>
+          <td>{{ mrow.title }}</td>
+          <td>{{ mrow.body }}</td>
+          <td>{{ mrow._id }}</td>
         </tr>
       </tbody>
     </table>
@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       posts: {},
-      post: {},
+      mrow: {},
       mainlists: {},
       resultsPerPage: 25,
       currentPage: 1,
@@ -70,7 +70,7 @@ export default {
       // return { age: this.age, type: "mlist" };
     },
     // You can also specify the database dynamically (local or remote), as well as limits, skip and sort order:
-    mainlists: function() {
+    maindb: function() {
       return {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
         selector: { rtype: "mlist", _id: { $gte: this.qsearch } },
