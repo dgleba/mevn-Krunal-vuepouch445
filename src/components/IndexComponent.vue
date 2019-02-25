@@ -7,7 +7,7 @@
         </router-link>
       </div>
       <div class="col-md-9">
-        Search mainlists -- _id more than <input v-model="qsearch" />
+        Search main-db -- _id more than <input v-model="qsearch" />
       </div>
     </div>
 
@@ -41,7 +41,6 @@
 export default {
   data() {
     return {
-      posts: {},
       mrow: {},
       mainlists: {},
       resultsPerPage: 25,

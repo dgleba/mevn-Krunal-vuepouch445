@@ -90,7 +90,7 @@ export default {
       this.$pouch
         .remove("maindb", {
           _id: this.$route.params.id,
-          _rev: this.mrow._rev
+          _rev: this.maindb._rev
         })
         .then(() => {
           this.$router.push({ name: "posts" });

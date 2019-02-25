@@ -36,12 +36,10 @@ var dghelper = require(".././helper.js");
 export default {
   data() {
     return {
-      posts: {},
       mrow: {},
       resultsPerPage: 25,
       currentPage: 1,
-      qsearch: "190221_2046",
-      mainelement: {}
+      qsearch: "190221_2046"
     };
   },
   methods: {

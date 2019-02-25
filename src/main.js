@@ -21,7 +21,8 @@ PouchDB.plugin(plf);
 // PouchDB.plugin(require("pouchdb-live-find"));
 // PouchDB.plugin(require("pouchdb-authentication"));
 
-Vue.use(require("vue-pouch"), {
+// Vue.use(require("vue-pouch"), {
+Vue.use(require("pouch-vue"), {
   pouch: PouchDB,
   defaultDB: "config"
 });
