@@ -22,15 +22,12 @@
       </thead>
       <tbody>
         <tr v-for="post in mainlists" :key="post._id">
-          <div>
-            <td>
-              <router-link
-                :to="{ name: 'edit', params: { id: post._id } }"
-                class="btn btn-primary"
-                >Edit</router-link
-              >
-            </td>
-          </div>
+          <router-link
+            :to="{ name: 'edit', params: { id: post._id } }"
+            class="btn btn-primary"
+            >Edit</router-link
+          >
+
           <td>{{ post.title }}</td>
           <td>{{ post.body }}</td>
           <td>{{ post._id }}</td>

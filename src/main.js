@@ -17,11 +17,20 @@ import lf from "pouchdb-find";
 import plf from "pouchdb-live-find";
 PouchDB.plugin(lf);
 PouchDB.plugin(plf);
+// PouchDB.plugin(require("pouchdb-find"));
+// PouchDB.plugin(require("pouchdb-live-find"));
+// PouchDB.plugin(require("pouchdb-authentication"));
 
 Vue.use(require("vue-pouch"), {
   pouch: PouchDB,
   defaultDB: "config"
 });
+
+// Vue.use("pouchVue", {
+//   pouch: PouchDB, // optional if `PouchDB` is available on the global object
+//   defaultDB: "remoteDbName", // this is used as a default connect/disconnect database
+//   debug: "*" // optional - See `https://pouchdb.com/api.html#debug_mode` for valid settings
+// });
 
 import HomeComponent from "./components/HomeComponent.vue";
 import CreateComponent from "./components/CreateComponent.vue";
