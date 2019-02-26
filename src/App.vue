@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <v-app id="inspire">
       <v-toolbar>
-        <v-toolbar-title>GenericApp</v-toolbar-title>
+        <v-toolbar-title>ReusableApp</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
           <v-btn v-for="item in menu" :key="item.icon" :to="item.link" flat>{{
@@ -12,7 +12,12 @@
         <v-menu class="hidden-md-and-up">
           <v-toolbar-side-icon slot="activator"></v-toolbar-side-icon>
           <v-list>
-            <v-list-tile v-for="item in menu" :key="item.icon">
+            <v-list-tile
+              v-for="item in menu"
+              :key="item.icon"
+              :to="item.link"
+              flat
+            >
               <v-list-tile-content>
                 <v-list-tile-title>{{ item.title }}</v-list-tile-title>
               </v-list-tile-content>
@@ -30,11 +35,7 @@ export default {
   data() {
     return {
       menu: [
-        {
-          icon: "home",
-          title: "home",
-          link: "/"
-        },
+        { icon: "home", title: "home", link: "/" },
         { icon: "a", title: "Posts", link: "/posts" },
         { icon: "info", title: "Status", link: "/statuscreate" },
         { icon: "warning", title: "tbd" }

@@ -69,24 +69,25 @@ export default {
   },
 
   created: function() {
+
     // create database index on 'rtype'
-    this.$pouch
-      .createIndex("maindb", { index: { fields: ["rtype"] } })
-      .then(() => {
-        // load all 'status' items
-        var q = ("maindb",
-        {
-          selector: {
-            rtype: "statusfld_type"
-          },
-          fields: ["name"]
-        });
-        return this.$pouch.find(q);
-      })
-      .then(data => {
-        // write the data to the Vue model, and from there the web page
-        this.statusflds2 = data.docs;
-      });
+    // this.$pouch
+    //   .createIndex("maindb", { index: { fields: ["rtype"] } })
+    //   .then(() => {
+    //     // load all 'status' items
+    //     var q = ("maindb",
+    //     {
+    //       selector: {
+    //         rtype: "statusfld_type"
+    //       },
+    //       fields: ["name"]
+    //     });
+    //     return this.$pouch.find(q);
+    //   })
+    //   .then(data => {
+    //     // write the data to the Vue model, and from there the web page
+    //     this.statusflds2 = data.docs;
+    //   });
     // console.log(this.statusflds, data.docs);
 
     // extract values for one key and place in array..
