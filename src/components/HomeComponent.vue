@@ -1,11 +1,14 @@
 <template>
-  <div class="row justify-content-center">
+  <div>
     <br />
-    <div class="col-md-8">
-      <div class="card card-default">
-        <div class="card-header">Home Component</div>
+    <div class="svdiv"></div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card card-default">
+          <div class="card-header">Home Component</div>
 
-        <div class="card-body">Welcome.</div>
+          <div class="card-body">Welcome.</div>
+        </div>
       </div>
     </div>
   </div>

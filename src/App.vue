@@ -25,8 +25,6 @@
   </div>
 </template>
 
-<style></style>
-
 <script>
 export default {
   data() {
@@ -37,7 +35,7 @@ export default {
           title: "home",
           link: "/"
         },
-        { icon: "info", title: "Posts", link: "/posts" },
+        { icon: "a", title: "Posts", link: "/posts" },
         { icon: "info", title: "Status", link: "/statuscreate" },
         { icon: "warning", title: "tbd" }
       ]
@@ -51,3 +49,12 @@ export default {
   }
 };
 </script>
+
+<style>
+/* <!--  // small height div to create a small vertical spacing --> */
+.svdiv {
+  height: 7px;
+  width: 50%;
+  // background-color: powderblue;
+}
+</style>

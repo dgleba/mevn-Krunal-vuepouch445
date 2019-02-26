@@ -1,5 +1,7 @@
 <template>
+  <v-app id="inspireindex">
   <div class="maindb">
+    <div class="svdiv"></div>
     <div class="row">
       <div class="col-md-3">
         <router-link :to="{ name: 'create' }" class="btn btn-success"
@@ -7,7 +9,9 @@
         </router-link>
       </div>
       <div class="col-md-9">
-        Search main-db -- _id more than <input v-model="qsearch" />
+      <v-input> </v-input>
+        Search main-db -- _id more than...  <input v-model="qsearch" />
+       
       </div>
     </div>
 
@@ -35,6 +39,7 @@
       </tbody>
     </table>
   </div>
+  </v-app id="inspireindex">
 </template>
 
 <script>
