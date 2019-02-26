@@ -1,41 +1,53 @@
 <template>
   <div class="container-fluid">
-    <nav
-      class="navbar navbar-expand-sm navbar-light"
-      style="background-color: #cceeff ;"
-    >
-      <a class="navbar-brand" href="#">App</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavbar"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse-offline-dg-placeholder">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <router-link to="/" class="nav-link">Home</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/posts" class="nav-link">Posts</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/statuscreate" class="nav-link"
-              >Status</router-link
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <router-view></router-view>
+    <v-app id="inspire">
+      <v-toolbar>
+        <v-toolbar-title>GenericApp</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items class="hidden-sm-and-down">
+          <v-btn v-for="item in menu" :key="item.icon" :to="item.link" flat>{{
+            item.title
+          }}</v-btn>
+        </v-toolbar-items>
+        <v-menu class="hidden-md-and-up">
+          <v-toolbar-side-icon slot="activator"></v-toolbar-side-icon>
+          <v-list>
+            <v-list-tile v-for="item in menu" :key="item.icon">
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </v-toolbar>
+      <router-view></router-view>
+    </v-app>
   </div>
 </template>
 
 <style></style>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      menu: [
+        {
+          icon: "home",
+          title: "home",
+          link: "/"
+        },
+        { icon: "info", title: "Posts", link: "/posts" },
+        { icon: "info", title: "Status", link: "/statuscreate" },
+        { icon: "warning", title: "tbd" }
+      ]
+    };
+  },
+
+  methods: {
+    menuItems() {
+      return this.menu;
+    }
+  }
+};
 </script>
