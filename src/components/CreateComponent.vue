@@ -29,7 +29,6 @@
           <md-autocomplete
             v-model="mrow.statusfld"
             :md-options="statusflds"
-            :md-layout="box"
             :md-open-on-focus="false"
           >
             <label>statusf - ( type a letter for list ) </label>
@@ -92,6 +91,8 @@ export default {
       });
     // console.log(this.statusflds, data.docs);
 
+    // extract values for one key and place in array..
+    // https://stackoverflow.com/questions/19590865/from-an-array-of-objects-extract-value-of-a-property-as-array/42059484
     let statusnames = statusflds.map(a => a.name);
     console.log("snames - ", this.statusnames);
   },
@@ -142,6 +143,7 @@ export default {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
         database: "maindb",
         selector: { rtype: "statusfld_type" },
+        include_docs: "false",
         fields: ["name"],
         limit: 3456
       };

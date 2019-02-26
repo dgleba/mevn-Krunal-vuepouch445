@@ -7,10 +7,10 @@
 ## Source:
 
 ```
-Original project source: https://github.com/KrunalLathiya/MEVNCRUDExample
+Original project source for Vue rest api app: https://github.com/KrunalLathiya/MEVNCRUDExample
 https://appdividend.com/2018/11/21/mevn-stack-tutorial-with-example-from-scratch/
 
-I Replace express rest api calls with vue-pouch calls.
+I Replace  rest api calls [express] with vue-pouch calls.
 See;
 https://github.com/buhrmi/vue-pouch
 

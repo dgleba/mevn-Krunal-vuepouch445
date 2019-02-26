@@ -1,5 +1,7 @@
 {
   "name": "mevn-krunal-vuepouch445c",
+  "author": "David Gleba 2019-02-26",
+  "originator-of-mevn": "Credit to Krunal Lathiya",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,9 +24,12 @@
     "vue-router": "^3.0.1"
   },
   "offline-notes-Dependencies": {
-    "pouch-vue___MDSLKTR/pouch-vue": "0.1.35",
-    "vue-pouch__quar": "0.0.23",
-    "vuepouch-buhri": "0.0.1",
+    "pouch-vue  ___MDSLKTR/pouch-vue": "0.1.35",
+    "pouch-vue": "0.1.35",
+    "vue-pouch  _qurateinc in npm, but directs to  ..  https: //github.com/buhrmi/vue-pouch": "0.0.23",
+    "vuepouch  -buhri": "0.0.1",
+    "vue-pouch": "latest",
+    "vuepouch": "0.0.1",
     "x": "0"
   },
   "devDependencies": {
