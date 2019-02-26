@@ -2,6 +2,10 @@ import Vue from "vue";
 import App from "./App.vue";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import VueMaterial from "vue-material";
+import "vue-material/dist/vue-material.min.css";
+Vue.use(VueMaterial);
+
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
@@ -38,6 +42,8 @@ import CreateComponent from "./components/CreateComponent.vue";
 import IndexComponent from "./components/IndexComponent.vue";
 import EditComponent from "./components/EditComponent.vue";
 
+import statusCreateComp from "./components/statusCreateComp.vue";
+
 let id = null;
 let _id = null;
 
@@ -61,6 +67,12 @@ const routes = [
     name: "edit",
     path: "/edit/:id",
     component: EditComponent
+  },
+
+  {
+    name: "statuscreate",
+    path: "/statuscreate",
+    component: statusCreateComp
   }
 ];
 

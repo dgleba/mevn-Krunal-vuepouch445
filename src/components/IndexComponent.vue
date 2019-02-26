@@ -42,10 +42,10 @@ export default {
   data() {
     return {
       mrow: {},
-      mainlists: {},
+      maindb: {},
       resultsPerPage: 25,
       currentPage: 1,
-      qsearch: "190223_2327"
+      qsearch: "190225_1714"
     };
   },
   created() {
@@ -56,6 +56,7 @@ export default {
     // this.axios.get(uri).then(response => {
     //   this.posts = response.data;
     // });
+    console.log(this.maindb);
   },
 
   methods: {},
@@ -76,6 +77,7 @@ export default {
         sort: [{ _id: "desc" }],
         limit: this.resultsPerPage
       };
+      console.log(maindb);
     }
   }
 };

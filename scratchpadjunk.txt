@@ -1,6 +1,14 @@
-=
 
 
+
+"Todo", "Closed", "Complete", "A"
+
+
+<label>Statusfld:</label>
+  <input type="text" class="form-control" v-model="mrow.statusfld" />
+
+
+class="collapse navbar-collapse" id = "collapsibleNavbar"
 
 
 <nav class="navbar navbar-expand-sm navbar-light bg-blue">

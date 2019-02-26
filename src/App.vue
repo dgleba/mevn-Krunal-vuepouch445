@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <nav
       class="navbar navbar-expand-sm navbar-light"
-      style="background-color: #C3EDEC ;"
+      style="background-color: #cceeff ;"
     >
       <a class="navbar-brand" href="#">App</a>
       <button
@@ -13,7 +13,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div class="collapse-offline-dg-placeholder">
         <ul class="navbar-nav">
           <li class="nav-item">
             <router-link to="/" class="nav-link">Home</router-link>
@@ -21,7 +21,11 @@
           <li class="nav-item">
             <router-link to="/posts" class="nav-link">Posts</router-link>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item">
+            <router-link to="/statuscreate" class="nav-link"
+              >Status</router-link
+            >
+          </li>
         </ul>
       </div>
     </nav>

@@ -22,6 +22,18 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-11">
+          <div class="form-group">
+            <label>Statusfld:</label>
+            <input
+              type="text"
+              class="form-control"
+              v-model="maindb.statusfld"
+            />
+          </div>
+        </div>
+      </div>
       <br />
       <div class="form-group">
         <button class="btn btn-primary">Update</button>
