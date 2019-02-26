@@ -2,6 +2,28 @@
 
 
 
+<div class="row">
+  <div class="col-md-11">
+    <div class="form-group "></div>
+    <label>statusfield - ( type a letter for list ) </label>
+    <v-card>
+      <v-autocomplete
+        v-model="mrow.statusfld"
+              : items="statusflds"
+      :label="vstatuslabel"
+      persistent-hint
+    >
+            </v-autocomplete>
+          </v-card>
+</div>
+      </div >
+      
+
+<label>statusf - ( type a letter for list ) </label>
+  <hr />
+
+
+
 https://github.com/QurateInc/vue-pouch-db
 
 

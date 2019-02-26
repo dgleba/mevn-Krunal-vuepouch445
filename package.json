@@ -20,16 +20,19 @@
     "pouchdb-live-find": "0.4.0",
     "vue": "^2.5.17",
     "vue-axios": "^2.1.4",
-    "vue-material": "1.0.0-beta-10.2",
-    "vue-router": "^3.0.1"
+
+    "vue-router": "^3.0.1",
+    "vuetify": "1.5.2"
   },
   "offline-notes-Dependencies": {
     "pouch-vue  ___MDSLKTR/pouch-vue": "0.1.35",
     "pouch-vue": "0.1.35",
-    "vue-pouch  _qurateinc in npm, but directs to  ..  https: //github.com/buhrmi/vue-pouch": "0.0.23",
-    "vuepouch  -buhri": "0.0.1",
-    "vue-pouch": "latest",
+    "vuepouch  -buhri  - but throws error": "0.0.1",
     "vuepouch": "0.0.1",
+    "vue-pouch  _qurateinc in npm https://github.com/QurateInc/vue-pouch-db, but directs to ": "0.0.23",
+    "vue-pouch  but directs to ..  https: //github.com/buhrmi/vue-pouch": "0.0.23",
+    "vue-pouch": "latest",
+    "vue-material": "1.0.0-beta-10.2",
     "x": "0"
   },
   "devDependencies": {

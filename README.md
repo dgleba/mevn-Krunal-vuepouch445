@@ -1,8 +1,13 @@
-# mevnexample
+# MEVN example converted to use pouchdb
+
+## Code is at Github this.
+
+https://github.com/dgleba/mevn-Krunal-vuepouch445
 
 ## Status
 
-- 2019-02-25_Mon_22.59-PM vue-material autocomplete has bug. with sub term even typing a letter will not result in populating the field with the selection.
+- 2019-02-25_Mon_22.59-PM vue-material autocomplete has a bug with sub term - even typing a letter will
+  not result in populating the field with the selection.
 
 ## Source:
 
@@ -10,13 +15,15 @@
 Original project source for Vue rest api app: https://github.com/KrunalLathiya/MEVNCRUDExample
 https://appdividend.com/2018/11/21/mevn-stack-tutorial-with-example-from-scratch/
 
-I Replace  rest api calls [express] with vue-pouch calls.
-See;
+I replaced  rest api calls [express] with vue-pouch / pouch-vue calls.
+See:
 https://github.com/buhrmi/vue-pouch
 
 Todo:
-Convert to  https://github.com/MDSLKTR/pouch-vue
-
+ - Convert to  https://github.com/MDSLKTR/pouch-vue
+ - Add autocomplete fields
+ - Add couchdb sync
+ - make it a PWA  - offline web app
 
 David Gleba 2019-02-22_Fri_07.09-AM
 ```

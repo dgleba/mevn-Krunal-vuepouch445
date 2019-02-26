@@ -1,6 +1,7 @@
 <template>
   <div>
     <h5>Create</h5>
+    <v-app id="inspire">
     <form @submit.prevent="add_mrow">
       <div class="row">
         <div class="col-md-11">
@@ -23,39 +24,35 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-11">
-          <div class="form-group statusflds"></div>
-          <md-autocomplete
-            v-model="mrow.statusfld"
-            :md-options="statusflds"
-            :md-open-on-focus="false"
-          >
-            <label>statusf - ( type a letter for list ) </label>
-
-            <template slot="md-autocomplete-item" slot-scope="{ item, term }">
-              <md-highlight-text :md-term="term">{{
-                item.name
-              }}</md-highlight-text>
-            </template>
-          </md-autocomplete>
-          <hr />
-        </div>
-      </div>
-
+      
+      <v-card>
+        <v-autocomplete
+          v-model="mrow.statusfld"
+          label="Statusfield"
+          :items="statusflds"
+          item-text="name"
+          :persistent-hint="true"
+          color="blue"
+          :multiple="true"
+        >
+        </v-autocomplete>
+      </v-card> 
+      
       <br />
+      
 
       <div class="form-group">
         <button class="btn btn-primary">Create</button>
       </div>
     </form>
+    </v-app id="inspire">
   </div>
 </template>
 
 <script>
 var dghelper = require(".././helper.js");
 
-var statusflds = [{ name: "" }];
+// var statusflds = [{ name: "" }];
 
 export default {
   data() {
@@ -64,7 +61,7 @@ export default {
       resultsPerPage: 25,
       currentPage: 1,
       qsearch: "190221_2046",
-      statusflds: [],
+      statusflds: {},
       statusnames: [],
       maindb: {}
     };
