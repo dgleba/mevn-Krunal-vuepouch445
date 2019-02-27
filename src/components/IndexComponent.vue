@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-9">
       <v-input> </v-input>
-        Search main-db -- _id more than...  <input v-model="qsearch" />
+        Search main-db -- _id more than...  <input id="dginput" v-model="qsearch" />
        
       </div>
     </div>
@@ -50,7 +50,7 @@ export default {
       maindb: {},
       resultsPerPage: 25,
       currentPage: 1,
-      qsearch: "190222_1714"
+      qsearch: ""
     };
   },
   created() {
@@ -78,7 +78,7 @@ export default {
     maindb: function() {
       return {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
-        selector: { rtype: "mlist", _id: { $gte: this.qsearch } },
+        selector: { rtype: "mlist", _id: { $regex: this.qsearch } },
         sort: [{ _id: "desc" }],
         limit: this.resultsPerPage
       };
@@ -87,3 +87,13 @@ export default {
   }
 };
 </script>
+
+<style>
+/* <!--  // make the input box more visible -->
+// background-color: hsl(192, 6%, 93%) ;
+ */
+#dginput {
+  color: black;
+  background-color: hsl(90, 16%, 91%);
+}
+</style>
