@@ -38,7 +38,7 @@ export default {
         { icon: "home", title: "home", link: "/" },
         { icon: "a", title: "Posts", link: "/posts" },
         { icon: "info", title: "Status", link: "/statuscreate" },
-        { icon: "warning", title: "tbd" }
+        { icon: "info2", title: "Statusfld", link: "/statusfield" }
       ]
     };
   },
