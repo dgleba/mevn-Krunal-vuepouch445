@@ -1,49 +1,49 @@
 <template>
   <div>
-   <div class="svdiv"></div>
+    <div class="svdiv"></div>
     <h5>Create</h5>
     <v-app id="inspire_cr">
-    <form @submit.prevent="add_mrow">
-      <div class="row">
-        <div class="col-md-11">
-          <div class="form-group">
-            <label>Title:</label>
-            <input type="text" class="form-control" v-model="mrow.title" />
+      <form @submit.prevent="add_mrow">
+        <div class="row">
+          <div class="col-md-11">
+            <div class="form-group">
+              <label>Title:</label>
+              <input type="text" class="form-control" v-model="mrow.title" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-11">
-          <div class="form-group">
-            <label>Body:</label>
-            <textarea
-              class="form-control"
-              v-model="mrow.body"
-              rows="5"
-            ></textarea>
+        <div class="row">
+          <div class="col-md-11">
+            <div class="form-group">
+              <label>Body:</label>
+              <textarea
+                class="form-control"
+                v-model="mrow.body"
+                rows="5"
+              ></textarea>
+            </div>
           </div>
         </div>
-      </div>
 
-      <v-card>
-        <v-autocomplete
-          v-model="mrow.statusfld"
-          label="Statusfield"
-          :items="statusflds"
-          item-text="name"
-          :persistent-hint="true"
-          color="blue"
-          :multiple="true"
-        >
-        </v-autocomplete>
-      </v-card> 
-      <br />
+        <v-card>
+          <v-autocomplete
+            v-model="mrow.statusfld"
+            label="Statusfield"
+            :items="statusflds"
+            item-text="name"
+            :persistent-hint="true"
+            color="blue"
+            :multiple="true"
+          >
+          </v-autocomplete>
+        </v-card>
+        <br />
 
-      <div class="form-group">
-        <button class="btn btn-primary">Create</button>
-      </div>
-    </form>
-    </v-app id="inspire_cr">
+        <div class="form-group">
+          <button class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </v-app>
   </div>
 </template>
 
@@ -66,7 +66,6 @@ export default {
   },
 
   created: function() {
-
     // create database index on 'rtype'
     // this.$pouch
     //   .createIndex("maindb", { index: { fields: ["rtype"] } })
@@ -86,7 +85,6 @@ export default {
     //     this.statusflds2 = data.docs;
     //   });
     // console.log(this.statusflds, data.docs);
-
     // extract values for one key and place in array..
     // https://stackoverflow.com/questions/19590865/from-an-array-of-objects-extract-value-of-a-property-as-array/42059484
     // let statusnames = statusflds.map(a => a.name);
