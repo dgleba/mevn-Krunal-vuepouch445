@@ -38,13 +38,13 @@
       <br />
       <div class="form-group">
         <button class="btn btn-primary">Update</button>
+        <button
+          class="btn btn-danger float-right"
+          @click.prevent="delete_mrow(mrow._id);"
+        >
+          Delete
+        </button>
       </div>
-      <button
-        class="btn btn-danger float-right"
-        @click.prevent="delete_mrow(mrow._id);"
-      >
-        Delete
-      </button>
     </form>
   </div>
 </template>

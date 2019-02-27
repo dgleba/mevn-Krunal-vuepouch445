@@ -6,8 +6,7 @@ https://github.com/dgleba/mevn-Krunal-vuepouch445
 
 ## Status
 
-- 2019-02-25_Mon_22.59-PM vue-material autocomplete has a bug with sub term - even typing a letter will
-  not result in populating the field with the selection.
+- 2019-02-26_Tue_22.02-PM basic app is complete with pouch, vue, search, autocomplete, both vuetify and bootstrap,
 
 ## Source:
 
@@ -20,15 +19,37 @@ See:
 https://github.com/buhrmi/vue-pouch
 
 Todo:
- - Convert to  https://github.com/MDSLKTR/pouch-vue
- - Add autocomplete fields
  - Add couchdb sync
  - make it a PWA  - offline web app
+
+Done..
+ - Convert to  https://github.com/MDSLKTR/pouch-vue
+ - Add autocomplete fields
 
 David Gleba 2019-02-22_Fri_07.09-AM
 ```
 
+## Includes:
+
+tech to learn..
+
+- Vue 2
+- pouchdb 7
+- vuetify
+- bootstrap css
+- pouch-vue
+- vue-router
+- vue-cli
+- webpack
+- html css js
+-
+
 ## Status History
+
+- 2019-02-26_Tue_22.02-PM basic app is complete with pouch vue search autocomplete vuetify and bootstrap
+
+- 2019-02-25_Mon_22.59-PM vue-material autocomplete has a bug with sub term - even typing a letter will
+  not result in populating the field with the selection.
 
 - 2019-02-25_Mon_22.59-PM vue-material autocomplete has bug. with sub term even typing a letter will not result in populating the field with the selection. for example, see https://github.com/vuematerial/vue-material/issues/1937.
 

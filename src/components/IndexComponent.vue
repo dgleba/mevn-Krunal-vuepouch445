@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-9">
       <v-input> </v-input>
-        Search main-db -- _id more than...  <input id="dginput" v-model="qsearch" />
+        Search main-table -- contains  <input id="dginput" v-model="qsearch" />
        
       </div>
     </div>
