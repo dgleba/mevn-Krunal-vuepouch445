@@ -2,7 +2,7 @@
   <div>
    <div class="svdiv"></div>
     <h5>Create</h5>
-    <v-app id="inspire">
+    <v-app id="inspire_cr">
     <form @submit.prevent="add_mrow">
       <div class="row">
         <div class="col-md-11">
@@ -25,7 +25,6 @@
         </div>
       </div>
 
-      
       <v-card>
         <v-autocomplete
           v-model="mrow.statusfld"
@@ -38,15 +37,13 @@
         >
         </v-autocomplete>
       </v-card> 
-      
       <br />
-      
 
       <div class="form-group">
         <button class="btn btn-primary">Create</button>
       </div>
     </form>
-    </v-app id="inspire">
+    </v-app id="inspire_cr">
   </div>
 </template>
 
@@ -92,8 +89,8 @@ export default {
 
     // extract values for one key and place in array..
     // https://stackoverflow.com/questions/19590865/from-an-array-of-objects-extract-value-of-a-property-as-array/42059484
-    let statusnames = statusflds.map(a => a.name);
-    console.log("snames - ", this.statusnames);
+    // let statusnames = statusflds.map(a => a.name);
+    // console.log("snames - ", this.statusnames);
   },
   methods: {
     addPost_api() {

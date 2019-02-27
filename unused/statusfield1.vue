@@ -1,13 +1,16 @@
 <template>
   <div class="maindb">
     <br />
-    <div>Add new items here..</div>
     <input id="dginput" v-model="arow.name" placeholder="...Enter New... " />
-    <button id="dgbutton" @click="addrow">Save `Statusfield'</button>
-    <div>
-      Click on an item below to edit it. Click outside that box to finish
-      editing.
-    </div>
+    <button
+      id="dgbutton"
+      @click="
+        $pouch.post('maindb', { name: arow.name, rtype: 'statusfld_type' });
+        arow.name = '';
+      "
+    >
+      Save `Statusfield'
+    </button>
     <div v-for="arow in maindb">
       <div class="svdiv"></div>
       <input
@@ -15,54 +18,22 @@
         v-model="arow.name"
         @change="$pouch.put('maindb', arow);"
       />
-      <button
-        id="dgbutton"
-        @click="
-          delconfm = confirmdel();
-          if (delconfm == true) {
-            $pouch.remove('maindb', arow);
-          }
-        "
-      >
-        Delete
+      <button id="dgbutton" @click="$pouch.remove('maindb', arow);">
+        Remove
       </button>
     </div>
   </div>
 </template>
 
 <script>
-var dghelper = require(".././helper.js");
-
 export default {
   data: () => ({
     arow: {},
     resultsPerPage: 125,
     currentPage: 1,
     qsearch: "",
-    delconfm: null,
     statusflds_x: []
   }),
-  methods: {
-    addrow: function() {
-      var viuid = dghelper.iuid();
-      this.$pouch.post("maindb", {
-        name: this.arow.name,
-        rtype: "statusfld_type",
-        _id: viuid
-      });
-      this.arow.name = "";
-    },
-    //
-    // see above template for edit and delete calls.
-    //
-    editrow_thisnotused: function() {
-      // this.$pouch.put("maindb", this.arow);
-    },
-    confirmdel: function() {
-      let delconfm = confirm("Are you sure you want to delete?");
-      return delconfm;
-    }
-  },
 
   // VuePouch adds a `pouch` config option to all components.
   // Use the pouch property to configure the component to (reactively) read data from pouchdb.

@@ -3,7 +3,11 @@ import App from "./App.vue";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Vuetify from "vuetify";
-Vue.use(Vuetify);
+import colors from "vuetify/es5/util/colors";
+Vue.use(Vuetify, {
+  theme: {}
+});
+
 // index.js or main.js
 import "vuetify/dist/vuetify.min.css"; // Ensure you are using css-loader
 
@@ -85,7 +89,6 @@ const routes = [
     component: statusCreateComp
   },
   {
-    name: "statusfield",
     path: "/statusfield",
     component: statusfield
   }

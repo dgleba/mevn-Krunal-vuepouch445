@@ -1,5 +1,40 @@
 
 
+_____________
+
+
+_____________
+
+
+_____________
+
+
+route
+
+// { title: "Status", link: "/statuscreate" },
+
+_____________
+
+
+from vuetify theme generator 
+
+
+import colors from 'vuetify/es5/util/colors'
+{
+  primary: colors.teal.base,
+    secondary: colors.indigo.base,
+      accent: colors.blue - grey.base,
+        error: colors.deep - orange.base,
+          warning: colors.amber.base,
+            info: colors.lime.base,
+              success: colors.green.base
+}
+
+_____________
+
+
+
+
 delete button
 
        <button

@@ -37,8 +37,8 @@ export default {
       menu: [
         { icon: "home", title: "home", link: "/" },
         { icon: "a", title: "Posts", link: "/posts" },
-        { icon: "info", title: "Status", link: "/statuscreate" },
-        { icon: "info2", title: "Statusfld", link: "/statusfield" }
+
+        { title: "Statusfield", link: "/statusfield" }
       ]
     };
   },
