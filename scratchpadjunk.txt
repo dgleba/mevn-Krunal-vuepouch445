@@ -1,5 +1,17 @@
 
 
+delete button
+
+       <button
+          class="btn btn-danger float-right"
+          @click.prevent="delete_mrow(mrow._id);"
+        >
+          Delete
+        </button>
+
+
+
+<v-spacer></v-spacer>
 
 
 

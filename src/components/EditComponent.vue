@@ -38,13 +38,13 @@
       <br />
       <div class="form-group">
         <button class="btn btn-primary">Update</button>
-        <button
-          class="btn btn-danger float-right"
-          @click.prevent="delete_mrow(mrow._id);"
-        >
-          Delete
-        </button>
       </div>
+      <button
+        class="btn btn-danger float-right"
+        @click.prevent="delete_mrow(mrow._id);"
+      >
+        Delete
+      </button>
     </form>
   </div>
 </template>
@@ -100,14 +100,24 @@ export default {
     },
     delete_mrow(id) {
       console.log("to delete.. ", this.maindb);
-      this.$pouch
-        .remove("maindb", {
-          _id: this.$route.params.id,
-          _rev: this.maindb._rev
-        })
-        .then(() => {
-          this.$router.push({ name: "posts" });
-        });
+      let delconfm = confirm("Are you sure you want to delete?");
+      if (delconfm == true) {
+        // delete the record if confirmed
+
+        this.$pouch
+          .remove("maindb", {
+            _id: this.$route.params.id,
+            _rev: this.maindb._rev
+          })
+          .then(() => {
+            this.$router.push({ name: "posts" });
+          });
+      }
+    },
+    confirm_x() {
+      this.$refs.confirm
+        .open("Delete", "Are you sure?", { color: "red" })
+        .then(confirm => {});
     }
   },
 

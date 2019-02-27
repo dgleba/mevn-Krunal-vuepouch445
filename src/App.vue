@@ -3,7 +3,7 @@
     <v-app id="inspire">
       <v-toolbar>
         <v-toolbar-title>ReusableApp</v-toolbar-title>
-        <v-spacer></v-spacer>
+
         <v-toolbar-items class="hidden-sm-and-down">
           <v-btn v-for="item in menu" :key="item.icon" :to="item.link" flat>{{
             item.title
