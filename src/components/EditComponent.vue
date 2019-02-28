@@ -1,5 +1,5 @@
 <template>
-  <div class="maindb">
+  <div class="atable">
     <div class="svdiv"></div>
     <h4>Edit</h4>
     <form @submit.prevent="update_mrow">
@@ -7,7 +7,7 @@
         <div class="col-md-11">
           <div class="form-group">
             <label> Title: </label>
-            <input type="text" class="form-control" v-model="maindb.title" />
+            <input type="text" class="form-control" v-model="atable.title" />
           </div>
         </div>
       </div>
@@ -17,7 +17,7 @@
             <label>Body: </label>
             <textarea
               class="form-control"
-              v-model="maindb.body"
+              v-model="atable.body"
               rows="4"
             ></textarea>
           </div>
@@ -30,7 +30,7 @@
             <input
               type="text"
               class="form-control"
-              v-model="maindb.statusfld"
+              v-model="atable.statusfld"
             />
           </div>
         </div>
@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       mrow: {},
-      maindb: {}
+      atable: {}
     };
   },
 
@@ -74,11 +74,11 @@ export default {
     },
 
     update_mrow: function() {
-      console.log(this.maindb);
+      console.log(this.atable);
       this.$pouch
         .put(
           "maindb",
-          this.maindb
+          this.atable
           // or update each field specifically
           // , {
           // title: this.mainlists.title,
@@ -99,7 +99,7 @@ export default {
       // });
     },
     delete_mrow(id) {
-      console.log("to delete.. ", this.maindb);
+      console.log("to delete.. ", this.atable);
       let delconfm = confirm("Are you sure you want to delete?");
       if (delconfm == true) {
         // delete the record if confirmed
@@ -107,7 +107,7 @@ export default {
         this.$pouch
           .remove("maindb", {
             _id: this.$route.params.id,
-            _rev: this.maindb._rev
+            _rev: this.atable._rev
           })
           .then(() => {
             this.$router.push({ name: "posts" });
@@ -124,13 +124,14 @@ export default {
   // Use the pouch property to configure the component to (reactively) read data from pouchdb.
   pouch: {
     // You can also specify the database dynamically (local or remote), as well as limits, skip and sort order:
-    maindb: function() {
+    atable: function() {
       return {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
+        database: "maindb",
         selector: { _id: this.$route.params.id },
         first: true
       };
-      console.log(this.maindb);
+      console.log(this.atable);
     }
   }
 };
