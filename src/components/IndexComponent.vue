@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspireindex">
-  <div class="maindb">
+  <div class="atable">
     <div class="svdiv"></div>
     <div class="row">
       <div class="col-md-3">
@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="mrow in maindb" :key="mrow._id">
+        <tr v-for="mrow in atable" :key="mrow._id">
           <router-link
             :to="{ name: 'edit', params: { id: mrow._id } }"
             class="btn btn-primary"
@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       mrow: {},
-      maindb: {},
+      atable: {},
       resultsPerPage: 25,
       currentPage: 1,
       qsearch: ""
@@ -61,7 +61,7 @@ export default {
     // this.axios.get(uri).then(response => {
     //   this.posts = response.data;
     // });
-    console.log(this.maindb);
+    console.log(this.atable);
   },
 
   methods: {},
@@ -75,14 +75,15 @@ export default {
       // return { age: this.age, type: "mlist" };
     },
     // You can also specify the database dynamically (local or remote), as well as limits, skip and sort order:
-    maindb: function() {
+    atable: function() {
       return {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
+        database: "maindb",
         selector: { rtype: "mlist", _id: { $regex: this.qsearch } },
         sort: [{ _id: "desc" }],
         limit: this.resultsPerPage
       };
-      console.log(maindb);
+      console.log(atable);
     }
   }
 };
