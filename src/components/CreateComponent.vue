@@ -61,7 +61,7 @@ export default {
       qsearch: "190221_2046",
       statusflds: {},
       statusnames: [],
-      maindb: {}
+      atable: {}
     };
   },
 
@@ -125,9 +125,10 @@ export default {
   // Use the pouch property to configure the component to (reactively) read data from pouchdb.
   pouch: {
     // simple selector.  I put i here to prevent post undefined error?
-    maindb: function() {
+    atable: function() {
       return {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
+        database: "maindb",
         selector: {},
         limit: this.resultsPerPage
       };

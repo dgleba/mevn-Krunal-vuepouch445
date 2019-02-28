@@ -8,6 +8,38 @@ https://github.com/dgleba/mevn-Krunal-vuepouch445
 
 - 2019-02-26_Tue_22.02-PM basic app is complete with pouch, vue, search, autocomplete, both vuetify and bootstrap,
 
+## Includes:
+
+tech to learn..
+
+- Vuejs.org v2.5
+- pouchdb v7
+- vuetify (styling and screen inputs like autocomplete)
+- getbootstrap.com css (styling) v4
+- pouch-vue (connects vue with pouchdb)
+- vue-router
+- vue-cli v3
+- webpack
+- couchdb - sync data to server db from pouchdb
+- html css js (w3schools.com)
+
+See package.json for more details.
+
+## The concept
+
+This is meant to be an example app that can be copied and altered for use in another specific purpose.
+
+There is a main data table and supporting tables that supply autocomplete suggestions.
+This brings consistency to the autocompleted fields you can add like category, task-type,
+supplier-name, machine-number, employee name, etc.
+
+You edit the main data table fields or attributes.
+Then edit the supporting tables used in the autocomplete fields.
+
+Start editing the createcomponent.vue.
+That is where the data table is defined in the form in the template and the pouch.put
+routine that writes the data to the pouchdb.
+
 ## Source:
 
 ```
@@ -28,21 +60,6 @@ Done..
 
 David Gleba 2019-02-22_Fri_07.09-AM
 ```
-
-## Includes:
-
-tech to learn..
-
-- Vue 2
-- pouchdb 7
-- vuetify
-- bootstrap css
-- pouch-vue
-- vue-router
-- vue-cli
-- webpack
-- html css js
--
 
 ## Status History
 

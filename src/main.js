@@ -55,7 +55,6 @@ import CreateComponent from "./components/CreateComponent.vue";
 import IndexComponent from "./components/IndexComponent.vue";
 import EditComponent from "./components/EditComponent.vue";
 
-import statusCreateComp from "./components/statusCreateComp.vue";
 import statusfield from "./components/statusfield.vue";
 
 let id = null;
@@ -83,11 +82,6 @@ const routes = [
     component: EditComponent
   },
 
-  {
-    name: "statuscreate",
-    path: "/statuscreate",
-    component: statusCreateComp
-  },
   {
     path: "/statusfield",
     component: statusfield

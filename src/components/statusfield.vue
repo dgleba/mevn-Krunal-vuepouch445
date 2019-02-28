@@ -53,7 +53,7 @@ export default {
       this.arow.name = "";
     },
     //
-    // see above template for edit and delete calls.
+    // see above <template> for edit and delete calls.
     //
     editrow_thisnotused: function() {
       // this.$pouch.put("maindb", this.arow);
@@ -63,7 +63,6 @@ export default {
       return delconfm;
     }
   },
-
   // VuePouch adds a `pouch` config option to all components.
   // Use the pouch property to configure the component to (reactively) read data from pouchdb.
   pouch: {
@@ -90,7 +89,6 @@ export default {
   background-color: hsl(80, 12%, 91%);
   margin: 2px;
 }
-
 #dgbutton {
   background-color: hsl(190, 26%, 91%);
   padding: 6px;

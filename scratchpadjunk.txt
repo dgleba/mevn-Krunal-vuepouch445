@@ -1,4 +1,8 @@
 
+_____________
+
+
+_____________
 
 _____________
 
@@ -6,6 +10,19 @@ _____________
 _____________
 
 
+_____________
+
+
+_____________
+
+
+import statusCreateComp from "./components/statusCreateComp.vue";
+
+{
+  name: "statuscreate",
+    path: "/statuscreate",
+      component: statusCreateComp
+},
 _____________
 
 
