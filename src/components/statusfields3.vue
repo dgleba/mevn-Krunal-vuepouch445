@@ -26,8 +26,8 @@
         id="dginput"
         v-model="arow.name"
         @change="
-          //arow.updatedat = this.dghelper.updatedat();
-          $pouch.put('maindb', arow);
+          arow.updatedat = this.dghelper.updatedat();
+          $pouch.put('maindb', { arow });
         "
       />
       {{ arow._id }}, {{ arow.updatedat }},

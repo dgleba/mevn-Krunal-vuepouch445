@@ -59,7 +59,7 @@ export default {
       resultsPerPage: 25,
       currentPage: 1,
       qsearch: "190221_2046",
-      statusflds: {},
+      statusflds: [],
       statusnames: [],
       atable: {}
     };

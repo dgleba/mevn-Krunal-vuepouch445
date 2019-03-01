@@ -6,7 +6,7 @@
     <button id="dgbutton" @click="addrow">Save `Statusfield'</button>
     <div>
       Click on an item below to edit it. Click outside that box to finish
-      editing (like a spreadsheet).
+      editing.
     </div>
     <div v-for="arow in maindb">
       <div class="svdiv"></div>
@@ -22,14 +22,7 @@
         Delete
       </button>
 
-      <input
-        id="dginput"
-        v-model="arow.name"
-        @change="
-          //arow.updatedat = this.dghelper.updatedat();
-          $pouch.put('maindb', arow);
-        "
-      />
+      <input id="dginput" v-model="arow.name" @change="editrow" />
       {{ arow._id }}, {{ arow.updatedat }},
     </div>
   </div>
@@ -45,7 +38,6 @@ export default {
     currentPage: 1,
     qsearch: "",
     delconfm: null,
-    updatedat: null,
     statusflds_x: []
   }),
   methods: {
