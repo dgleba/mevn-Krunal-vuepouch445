@@ -57,6 +57,6 @@ export default {
 .svdiv {
   height: 7px;
   width: 50%;
-  // background-color: powderblue;
+  /* background-color: powderblue; */
 }
 </style>

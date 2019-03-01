@@ -1,3 +1,4 @@
+typeof module.exports !== 'undefined'
 import Vue from "vue";
 import App from "./App.vue";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -58,8 +59,8 @@ import EditComponent from "./components/EditComponent.vue";
 import statusfield from "./components/statusfield.vue";
 import appsettings from "./components/appsettings.vue";
 
-let id = null;
-let _id = null;
+// let id = null;
+// let _id = null;
 
 const routes = [
   {
