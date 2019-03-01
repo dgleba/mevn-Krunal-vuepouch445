@@ -1,5 +1,9 @@
 # Notes
 
+## local docs pouchdb
+
+https://pouchdb.com/guides/local-documents.html
+
 ## undefined ... issue
 
 error:

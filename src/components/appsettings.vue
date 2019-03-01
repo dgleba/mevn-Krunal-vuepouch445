@@ -1,33 +1,22 @@
 <template>
-  <div class="maindb">
+  <div class="localaapp">
     <br />
-    <div>Add new items here..</div>
-    <input id="dginput" v-model="arow.name" placeholder="...Enter New... " />
-    <button id="dgbutton" @click="addrow">Save `Statusfield'</button>
+    <div>SETTINGS</div>
+    <input id="dginput" v-model="arow.synca" placeholder="...??Enter New... " />
+    <button id="dgbutton" @click="addrow">Save</button>
     <div>
       Click on an item below to edit it. Click outside that box to finish (like
       a spreadsheet).
     </div>
-    <div v-for="arow in maindb">
-      <div class="svdiv"></div>
-      <button
-        id="dgbutton"
-        @click="
-          delconfm = confirmdel();
-          if (delconfm == true) {
-            $pouch.remove('maindb', arow);
-          }
-        "
-      >
-        Delete
-      </button>
 
+    <div v-for="arow in localaapp">
+      <div class="svdiv"></div>
       <input
         id="dginput"
-        v-model="arow.name"
+        v-model="arow.synca"
         @change="
           // arow.updatedat = this.dghelper.updatedat(); // TypeError: Cannot read property 'updatedat' of undefined
-          $pouch.put('maindb', arow);
+          $pouch.put('_local/aapp', arow);
         "
       />
       {{ arow._id }}, {{ arow.updatedat }},
@@ -45,48 +34,41 @@ export default {
     currentPage: 1,
     qsearch: "",
     delconfm: null,
-    updatedat: null,
-    statusflds_x: []
+    updatedat: null
   }),
   methods: {
     addrow: function() {
-      var viuid = dghelper.iuid();
-      this.$pouch.post("maindb", {
-        name: this.arow.name,
-        rtype: "statusfld_type",
+      this.$pouch.post("_local/aapp", {
+        synca: this.arow.synca,
+        //rtype: "XXsettingsTBD",
         updatedat: dghelper.updatedat(),
-        _id: viuid
+        _id: "1"
       });
-      this.arow.name = "";
+      //this.arow.name = "";
     },
     //
     // see above <template> for edit and delete calls. I couldnt get it to work here in this editrow function.
     //
     editrow: function() {
-      // this.$pouch.put("maindb", this.arow);
+      // this.$pouch.put("_local/aapp", this.arow);
       //this.arow.updatedat = dghelper.updatedat();
-      this.$pouch.put("maindb", {
-        name: this.arow.name,
-        rtype: "statusfld_type",
+      this.$pouch.put("_local/aapp", {
+        synca: this.arow.synca,
         updatedat: dghelper.updatedat(),
-        _id: this.arow._id,
+        _id: "1",
         _rev: this.arow._rev
       });
-    },
-    confirmdel: function() {
-      let delconfm = confirm("Are you sure you want to delete?");
-      return delconfm;
     }
   },
   // VuePouch adds a `pouch` config option to all components.
   // Use the pouch property to configure the component to (reactively) read data from pouchdb.
   pouch: {
     // simple selector.  I put i here to prevent post undefined error?
-    maindb: function() {
+    localaapp: function() {
       return {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
-        //database: "maindb",
-        selector: { rtype: "statusfld_type" },
+        database: "_local/aapp",
+        selector: {},
         sort: [{ name: "asc" }],
         limit: this.resultsPerPage
       };

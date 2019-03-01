@@ -14,6 +14,7 @@ exports.updatedat = () => {
   var upd = dayjs().format("YYMMDD_HH.mm.ss");
   return upd;
 };
+
 // export function fiuid = function() {
 //   var uid = dayjs()
 //     .format("YYMMDD_HHmm.ss.SSSZZ-")

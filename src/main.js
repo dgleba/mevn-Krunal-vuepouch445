@@ -7,10 +7,10 @@ import colors from "vuetify/es5/util/colors";
 Vue.use(Vuetify, {
   theme: {}
 });
-
 // index.js or main.js
 import "vuetify/dist/vuetify.min.css"; // Ensure you are using css-loader
 
+// vue material autocomplete has bugs. switch to vuetify.2019-03-01
 // import VueMaterial from "vue-material";
 // import "vue-material/dist/vue-material.min.css";
 // Vue.use(VueMaterial);
@@ -56,6 +56,7 @@ import IndexComponent from "./components/IndexComponent.vue";
 import EditComponent from "./components/EditComponent.vue";
 
 import statusfield from "./components/statusfield.vue";
+import appsettings from "./components/appsettings.vue";
 
 let id = null;
 let _id = null;
@@ -81,10 +82,13 @@ const routes = [
     path: "/edit/:id",
     component: EditComponent
   },
-
   {
     path: "/statusfield",
     component: statusfield
+  },
+  {
+    path: "/settings",
+    component: appsettings
   }
 ];
 
