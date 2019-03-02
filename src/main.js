@@ -33,7 +33,7 @@ PouchDB.plugin(lf);
 PouchDB.plugin(plf);
 // PouchDB.plugin(require("pouchdb-find"));
 // PouchDB.plugin(require("pouchdb-live-find"));
-PouchDB.plugin(require("pouchdb-authentication"));
+// PouchDB.plugin(require("pouchdb-authentication"));
 
 // vue-pouch is for Buhrmi's package. pouch-vue is for MDSLKTR'S
 // https://github.com/MDSLKTR/pouch-vue

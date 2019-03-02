@@ -12,7 +12,26 @@ _____________
 
 _____________
 
-
+  created() {
+    console.log(this.atable);
+    console.log(this.arow.synca);
+    // Send all documents to the remote database, and stream changes in real-time. Note if you use filters you need to set them correctly for pouchdb and couchdb. You can set them for each direction separatly: options.push/options.pull. PouchDB might not need the same filter to push documents as couchdb to send the filtered requested documents.
+    // this.$pouch.sync('maindb', 'http://a:a@192.168.88.58:5984/maindb');
+    var syncurl = this.$pouch.get('_local/aapp', '1')
+    this.$pouch.sync('maindb', this.syncurl.synca).on('complete', function (ascomplete) {
+        // yay, we're in sync!
+        console.log('yay, we are in sync!');
+      }).on('change', function (aschange) {
+        // yo, something changed!
+      }).on('paused', function () {
+        // replication was paused, usually because of a lost connection
+      }).on('active', function (asinfo) {
+        // replication was resumed
+      }).on('error', function (aserr) {
+        // totally unhandled error (shouldn't happen)
+      });
+  },
+  
 _____________
 
 

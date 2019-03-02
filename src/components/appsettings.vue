@@ -21,11 +21,18 @@
       />
       {{ arow._id }}, {{ arow.updatedat }},
     </div>
+
+    <v-snackbar  v-model="snksnackbar"  :timeout="snktimeout" >
+      {{ snktext }}
+      <v-btn  color="pink"  flat  @click="snksnackbar = false"  >  Close  </v-btn>
+    </v-snackbar>
+    
   </div>
 </template>
 
 <script>
 var dghelper = require(".././helper.js");
+import PouchDB from "pouchdb-browser";
 
 export default {
   data: () => ({
@@ -35,7 +42,10 @@ export default {
     currentPage: 1,
     qsearch: "",
     delconfm: null,
-    updatedat: null
+    updatedat: null,
+    snksnackbar: false,
+    snktimeout: 4200,
+    snktext: 'Couchdb sync info' 
   }),
   created() {
     console.log(this.atable);
@@ -43,24 +53,58 @@ export default {
     // Send all documents to the remote database, and stream changes in real-time. Note if you use filters you need to set them correctly for pouchdb and couchdb. You can set them for each direction separatly: options.push/options.pull. PouchDB might not need the same filter to push documents as couchdb to send the filtered requested documents.
     // this.$pouch.sync('maindb', 'http://a:a@192.168.88.58:5984/maindb');
     var syncurl = this.$pouch.get('_local/aapp', '1')
-    this.$pouch.sync('maindb', this.syncurl.synca);
+
+    // this.$pouch.sync('maindb', syncurl.synca)
+
+
+    var sync = PouchDB.sync('maindb', 'http://a:a@192.168.88.58:5984/maindb', {
+  live: true,
+  retry: true
+}).on('change', function (info) {
+  // handle change
+  snksnackbar = true;
+}).on('paused', function (err) {
+  // replication paused (e.g. replication up to date, user went offline)
+}).on('active', function () {
+  // replicate resumed (e.g. new changes replicating, user went back online)
+}).on('denied', function (err) {
+  // a document failed to replicate (e.g. due to permissions)
+}).on('complete', function (info) {
+  // handle complete
+}).on('error', function (err) {
+  // handle error
+  snksnackbar = true;
+});
+
+
   },  
   methods: {
+    ascomplete: function() {
+      snksnackbar = true;
+    },
+    asinfo: function() {
+      snksnackbar = true;
+    },    
+    aschange: function() {
+      snksnackbar = true;
+    }, 
+    aserr: function() {
+      snksnackbar = true;
+    },        
     addrow: function() {
       this.$pouch.post("_local/aapp", {
         synca: this.arow.synca,
-        //rtype: "XXsettingsTBD",
         updatedat: dghelper.updatedat(),
         _id: "1"
       });
-      //this.arow.name = "";
+      snksnackbar = true;
     },
     //
     // see above <template> for edit and delete calls. I couldnt get it to work here in this editrow function.
     //
     editrow: function() {
       // this.$pouch.put("_local/aapp", this.arow);
-      //this.arow.updatedat = dghelper.updatedat();
+      // this.arow.updatedat = dghelper.updatedat();
       this.$pouch.put("_local/aapp", {
         synca: this.arow.synca,
         updatedat: dghelper.updatedat(),
