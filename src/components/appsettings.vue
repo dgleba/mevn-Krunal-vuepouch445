@@ -30,12 +30,21 @@ var dghelper = require(".././helper.js");
 export default {
   data: () => ({
     arow: {},
+    syncurl: {},
     resultsPerPage: 125,
     currentPage: 1,
     qsearch: "",
     delconfm: null,
     updatedat: null
   }),
+  created() {
+    console.log(this.atable);
+    console.log(this.arow.synca);
+    // Send all documents to the remote database, and stream changes in real-time. Note if you use filters you need to set them correctly for pouchdb and couchdb. You can set them for each direction separatly: options.push/options.pull. PouchDB might not need the same filter to push documents as couchdb to send the filtered requested documents.
+    // this.$pouch.sync('maindb', 'http://a:a@192.168.88.58:5984/maindb');
+    var syncurl = this.$pouch.get('_local/aapp', '1')
+    this.$pouch.sync('maindb', this.syncurl.synca);
+  },  
   methods: {
     addrow: function() {
       this.$pouch.post("_local/aapp", {
@@ -77,7 +86,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* <!--  // make the input box more visible -->
 // background-color: hsl(192, 6%, 93%) ;
  */
@@ -85,6 +94,7 @@ export default {
   color: black;
   background-color: hsl(80, 12%, 91%);
   margin: 2px;
+  width: 60%;
 }
 #dgbutton {
   background-color: hsl(190, 26%, 91%);

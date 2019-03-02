@@ -1,14 +1,14 @@
 // yes
 //https://stackoverflow.com/questions/43608457/how-to-import-functions-from-different-js-file-in-a-vuewebpackvue-loader-proje
 
-typeof module.exports !== 'undefined'
+// typeof module.exports !== 'undefined'
 
 import dayjs from "dayjs";
 
 //
 // Codesandbox needs the following Syntax, exports.iuid = () => {
 // in npm run sreve.. vue Uncaught ReferenceError exports is not defined
-//exports.iuid = () => {
+// exports.iuid = () => {
 //  
 export function iuid() {
   var uid = dayjs()

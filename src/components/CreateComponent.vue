@@ -138,6 +138,7 @@ export default {
         //database: this.selectedDatabase, // you can pass a database string or a pouchdb instance
         database: "maindb",
         selector: { rtype: "statusfld_type" },
+        sort: [{ name: "asc" }],
         include_docs: "false",
         fields: ["name"],
         limit: 3456

@@ -95,7 +95,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* <!--  // make the input box more visible -->
 // background-color: hsl(192, 6%, 93%) ;
  */
@@ -103,6 +103,7 @@ export default {
   color: black;
   background-color: hsl(80, 12%, 91%);
   margin: 2px;
+  min-width: 20%;
 }
 #dgbutton {
   background-color: hsl(190, 26%, 91%);

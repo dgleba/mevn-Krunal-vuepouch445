@@ -1,4 +1,4 @@
-typeof module.exports !== 'undefined'
+// typeof module.exports !== 'undefined'
 import Vue from "vue";
 import App from "./App.vue";
 import "bootstrap/dist/css/bootstrap.min.css";

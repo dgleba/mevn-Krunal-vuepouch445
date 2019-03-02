@@ -62,7 +62,8 @@ export default {
     //   this.posts = response.data;
     // });
     console.log(this.atable);
-  },
+    
+    },
 
   methods: {},
 
@@ -89,7 +90,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* <!--  // make the input box more visible -->
 // background-color: hsl(192, 6%, 93%) ;
  */
