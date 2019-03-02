@@ -3,6 +3,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+require('dotenv').config()
+
 import Vuetify from "vuetify";
 import colors from "vuetify/es5/util/colors";
 Vue.use(Vuetify, {

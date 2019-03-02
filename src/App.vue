@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <v-app id="inspire">
       <v-toolbar>
-        <v-toolbar-title>A_App.&nbsp </v-toolbar-title>
+        <v-toolbar-title>A_App.&nbsp; </v-toolbar-title>
 
         <v-menu class="hidden-md-and-up">
           <v-toolbar-side-icon slot="activator"></v-toolbar-side-icon>
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+// console.log("server2=", this.process.env.VUE_APP_server2);
+
 export default {
   data() {
     return {

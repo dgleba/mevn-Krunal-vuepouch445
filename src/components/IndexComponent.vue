@@ -39,7 +39,7 @@
       </tbody>
     </table>
   </div>
-  </v-app id="inspireindex">
+  </v-app>
 </template>
 
 <script>
@@ -84,7 +84,7 @@ export default {
         sort: [{ _id: "desc" }],
         limit: this.resultsPerPage
       };
-      console.log(atable);
+      // console.log(atable);
     }
   }
 };

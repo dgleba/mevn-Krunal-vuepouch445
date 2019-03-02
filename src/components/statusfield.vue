@@ -6,7 +6,7 @@
     <button id="dgbutton" @click="addrow">Save `Statusfield'</button>
     <div>
       Click on an item below to edit it. Click outside that box to finish (like
-      a spreadsheet).
+      a spreadsheet). , {{ one }},
     </div>
     <div v-for="arow in maindb">
       <div class="svdiv"></div>
@@ -39,15 +39,29 @@
 var dghelper = require(".././helper.js");
 
 export default {
-  data: () => ({
+  // data: () => ({
+  //   arow: {},
+  //   resultsPerPage: 125,
+  //   currentPage: 1,
+  //   qsearch: "",
+  //   delconfm: null,
+  //   updatedat: null,
+  //   one: process.env.VUE_APP_ONE,
+  //   statusflds_x: []
+  // }),
+ data: function () {
+    return {
     arow: {},
     resultsPerPage: 125,
     currentPage: 1,
     qsearch: "",
     delconfm: null,
     updatedat: null,
-    statusflds_x: []
-  }),
+    statusflds_x: [],
+    count: 0,
+    one: process.env.VUE_APP_ONE
+    }
+  },
   methods: {
     addrow: function() {
       var viuid = dghelper.iuid();
