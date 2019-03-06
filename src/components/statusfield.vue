@@ -6,7 +6,7 @@
     <button id="dgbutton" @click="addrow">Save `Statusfield'</button>
     <div>
       Click on an item below to edit it. Click outside that box to finish (like
-      a spreadsheet).
+      a spreadsheet). {{ secr }} {{ secr2 }}
     </div>
     <div v-for="arow in maindb">
       <div class="svdiv"></div>
@@ -46,8 +46,13 @@ export default {
     qsearch: "",
     delconfm: null,
     updatedat: null,
-    statusflds_x: []
+    statusflds_x: [],
+    secr: process.env.VUE_APP_SECRET,
+    secr2: "this-is-secr2"
   }),
+  // created: {
+  // var secr = process.env.VUE_APP_SECRET;
+  // },
   methods: {
     addrow: function() {
       var viuid = dghelper.iuid();

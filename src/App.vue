@@ -32,6 +32,9 @@
 </template>
 
 <script>
+console.log("server2=", process.env.VUE_APP_server2);
+console.log(process.env.VUE_APP_SECRET);
+
 export default {
   data() {
     return {
